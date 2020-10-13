@@ -190,4 +190,16 @@ public class MyList<T> implements Collection<T> {
     @Override
     public void clear() {
     }
+
+    public Node<T> indexAt(int index) {
+
+        if ((index <= this.counter - 1 ) && (index >=0)) {
+            Node<T> iter = this.begin;
+            for (int i=0; i <index; ++i) {
+                iter = iter.getNext();
+            }
+            return iter;
+        }
+        return null;
+    }
 }
