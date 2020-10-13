@@ -22,4 +22,18 @@ public class Randomizer {
         }
         return true;
     }
+
+    public static boolean randomString(Collection<String> collection, long length, long numbers) {
+        if (numbers <= 0) {
+            return false;
+        }
+        for (int i = 0 ; i < numbers ; ++i) {
+            String str = "";
+            for (long k = length ; k > 0; --k) {
+                str += Character.toString((char)(Math.random()*65000));
+            }
+            collection.add(str);
+        }
+        return true;
+    }
 }
