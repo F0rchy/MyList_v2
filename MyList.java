@@ -1,5 +1,3 @@
-package com.max.idea;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Spliterator;
@@ -242,4 +240,29 @@ public class MyList<T> implements Collection<T> {
             }
         }
     }
+}
+
+    public void sort() {
+        Node<T> a;
+        Node<T> b;
+        boolean flag = true;
+        while (flag) {
+            int count = 0;
+            for (int i = 1; i <= this.counter - 1; i++) {
+                a = indexAt(i - 1);
+                b = indexAt(i);
+                if (comp.compare(a, b) > 0) {
+                    swap(i - 1, i);
+                    count++;
+                }
+            }
+            if (count == 0) {
+                flag = false;
+            }
+        }
+    }
+}
+
+interface Comparable {
+    int compare(MyList.Node a, MyList.Node b);
 }

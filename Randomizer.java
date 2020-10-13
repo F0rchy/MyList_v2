@@ -1,5 +1,3 @@
-package com.max.idea;
-
 import java.util.Collection;
 
 public class Randomizer {
