@@ -202,4 +202,44 @@ public class MyList<T> implements Collection<T> {
         }
         return null;
     }
+
+    public void swap(int firstPos, int secondPos) {
+        if (firstPos > secondPos) {
+            int a;
+            a = firstPos;
+            firstPos = secondPos;
+            secondPos = a;
+        }
+        Node<T> predFirst = indexAt(firstPos - 1);
+        Node<T> predSecond = indexAt(secondPos - 1);
+        Node<T> first = indexAt(firstPos);
+        Node<T> second = indexAt(secondPos);
+        Node<T> postFirst = indexAt(firstPos + 1);
+        Node<T> postSecond = indexAt(secondPos + 1);
+        if ((firstPos >= 0) && (firstPos <= counter - 1) && (secondPos >= 0) && (secondPos <= counter - 1) && (firstPos != secondPos)) {
+            if (predFirst == null) {
+                if (secondPos - firstPos == 1) {
+                    this.begin = second;
+                    second.setNext(first);
+                    first.setNext(postSecond);
+                } else {
+                    this.begin = second;
+                    second.setNext(postFirst);
+                    predSecond.setNext(first);
+                    first.setNext(postSecond);
+                }
+            } else {
+                if (secondPos - firstPos == 1) {
+                    predFirst.setNext(second);
+                    second.setNext(first);
+                    first.setNext(postSecond);
+                } else {
+                    predFirst.setNext(second);
+                    second.setNext(postFirst);
+                    predSecond.setNext(first);
+                    first.setNext(postSecond);
+                }
+            }
+        }
+    }
 }
