@@ -1,8 +1,8 @@
+package com.max.idea;
+
 public class Main {
     public static void main(String[] args) {
-
-    }
-    //-----------------------------------------Integer--------------------------------------------------
+//-----------------------------------------------------------Integer----------------------------------------------------
         MyList<Integer> list = new MyList<> ((a, b) -> {
             if(((int)a.getValue() - (int)b.getValue()) > 0) {
                 return 1;
@@ -18,7 +18,7 @@ public class Main {
         System.out.println(list.toString());
         list.sort();
         System.out.println(list.toString());
-//-----------------------------------------Double----------------------------------------------------
+//-----------------------------------------------------------Double-----------------------------------------------------
 //        MyList<Double> list = new MyList<> ((a, b) -> {
 //            if(((double)a.getValue() - (double)b.getValue()) > 0) {
 //                return 1;
@@ -34,7 +34,7 @@ public class Main {
 //        System.out.println(list.toString());
 //        list.sort();
 //        System.out.println(list.toString());
-//------------------------------------------String---------------------------------------------------
+//-----------------------------------------------------------String-----------------------------------------------------
 //        MyList<String> list = new MyList<>();
 //        Randomizer.randomString(list, 5, 5);
 //        System.out.println(list.toString());

@@ -1,3 +1,5 @@
+package com.max.idea;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Spliterator;
@@ -34,7 +36,8 @@ public class MyList<T> implements Collection<T> {
         public boolean hasNext() {
             if (this.next != null) {
                 return true;
-            } else {
+            }
+            else {
                 return false;
             }
         }
@@ -240,7 +243,6 @@ public class MyList<T> implements Collection<T> {
             }
         }
     }
-}
 
     public void sort() {
         Node<T> a;

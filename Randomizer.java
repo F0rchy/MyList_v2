@@ -1,3 +1,5 @@
+package com.max.idea;
+
 import java.util.Collection;
 
 public class Randomizer {
@@ -28,7 +30,7 @@ public class Randomizer {
         for (int i = 0 ; i < numbers ; ++i) {
             String str = "";
             for (long k = length ; k > 0; --k) {
-                str += Character.toString((char)(Math.random()*65000));
+                    str += Character.toString((char)(Math.random()*65000));
             }
             collection.add(str);
         }
