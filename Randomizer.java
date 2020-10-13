@@ -12,4 +12,14 @@ public class Randomizer {
         }
         return true;
     }
+
+    public static boolean randomDouble(Collection<Double> collection, long numbers) {
+        if (numbers <= 0) {
+            return false;
+        }
+        for (int i = 0 ; i < numbers ; ++i) {
+            collection.add((double)(Math.random() * 10));
+        }
+        return true;
+    }
 }
